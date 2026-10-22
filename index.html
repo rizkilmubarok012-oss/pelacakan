@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Alumni PP Ainul Hasan</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="auth-wrap">
+    <div style="text-align:center">
+      <h1 style="color:var(--mint-dark)">Alumni PP Ainul Hasan</h1>
+      <p style="color:var(--muted);margin-top:8px">Memuat...</p>
+    </div>
+  </div>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script>
+    (async () => {
+      if (!API.getToken()) { location.replace('auth.html'); return; }
+      try {
+        const d = await API.call('me');
+        sessionStorage.setItem('ainulhasan_me', JSON.stringify(d));
+        location.replace('app.html');
+      } catch {
+        API.setToken('');
+        location.replace('auth.html');
+      }
+    })();
+  </script>
+</body>
+</html>

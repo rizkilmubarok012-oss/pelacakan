@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Masuk — Alumni PP Ainul Hasan</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <h2>Alumni PP Ainul Hasan</h2>
+      <p class="tag">Satu Pesantren, Satu Silaturahmi, Selamanya Bersaudara</p>
+
+      <div style="display:flex;gap:8px;margin-bottom:18px">
+        <button class="btn btn-sm" id="tabLogin" style="flex:1">Masuk</button>
+        <button class="btn btn-sm btn-ghost" id="tabRegister" style="flex:1">Daftar</button>
+      </div>
+
+      <form id="loginForm">
+        <div class="field"><label>Email</label>
+          <input type="email" name="email" required autocomplete="email"></div>
+        <div class="field"><label>Kata Sandi</label>
+          <input type="password" name="password" required autocomplete="current-password" minlength="6"></div>
+        <button type="submit" class="btn">Masuk</button>
+      </form>
+
+      <form id="registerForm" style="display:none">
+        <div class="field"><label>Nama Lengkap</label><input name="full_name" required></div>
+        <div class="field"><label>Email</label><input type="email" name="email" required></div>
+        <div class="field"><label>Nomor WhatsApp</label>
+          <input name="whatsapp" required placeholder="08xx"></div>
+        <div class="form-grid" style="grid-template-columns:1fr 1fr">
+          <div class="field"><label>Tahun Masuk</label>
+            <input type="number" name="year_in" required min="1950" max="2100"></div>
+          <div class="field"><label>Tahun Lulus</label>
+            <input type="number" name="year_out" required min="1950" max="2100"></div>
+        </div>
+        <div class="field"><label>Kata Sandi</label>
+          <input type="password" name="password" required minlength="6">
+          <span class="hint">Min. 6 karakter</span></div>
+        <button type="submit" class="btn">Daftar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth-page.js"></script>
+</body>
+</html>
